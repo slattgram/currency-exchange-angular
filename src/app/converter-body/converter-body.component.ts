@@ -32,6 +32,8 @@ export class ConverterBodyComponent implements OnInit {
 
 
   setValue(inputToChange:number){
+    
+
     switch (this.firstInputCurrency) {
       case ('UAH'):
         this.rateTopPart = 1;

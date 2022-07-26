@@ -1,0 +1,9 @@
+.body-inputs-group{
+  display: flex;
+  flex-direction: column;
+}
+body{
+  padding:1rem;
+  display: flex;
+  flex-direction: column;
+}

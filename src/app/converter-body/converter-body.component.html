@@ -1,50 +1,58 @@
-<div>
-  <mat-form-field>
-    <input matInput
-           type="number"
-           [(ngModel)]="firstInputValue"
-           (ngModelChange)="setValue(2)"/>
-  </mat-form-field>
+<body>
+  <div class="body-inputs-group">
+    <h2>First value</h2>
+    <mat-form-field>
+      <mat-label>
+        First Value
+      </mat-label>
+      <input matInput
+             type="number"
+             [(ngModel)]="firstInputValue"
+             (ngModelChange)="setValue(2)"/>
+    </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>
-      Currency
-    </mat-label>
+    <mat-form-field>
+      <mat-select [(value)]="firstInputCurrency" (selectionChange)="setValue(1)">
+        <mat-option value="UAH">
+          UAH
+        </mat-option>
+        <mat-option value="USD">
+          USD
+        </mat-option>
+        <mat-option value="EUR">
+          EUR
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
 
-    <mat-select [(value)]="firstInputCurrency" (selectionChange)="setValue(1)">
-      <mat-option value="UAH">
-        UAH
-      </mat-option>
-      <mat-option value="USD">
-        USD
-      </mat-option>
-      <mat-option value="EUR">
-        EUR
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+  <div class="body-inputs-group">
+    <h2>Second value</h2>
+    <mat-form-field>
+      <mat-label>Second Value</mat-label>
+      <input matInput
+             type="number"
+             [(ngModel)]="secondInputValue"
+             (ngModelChange)="setValue(1)"/>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>
+        Currency
+      </mat-label>
 
-  <mat-form-field>
-    <input matInput
-           type="number"
-           [(ngModel)]="secondInputValue"
-           (ngModelChange)="setValue(1)"/>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>
-      Currency
-    </mat-label>
+      <mat-select [(value)]="secondInputCurrency" (selectionChange)="setValue(2)">
+        <mat-option value="UAH">
+          UAH
+        </mat-option>
+        <mat-option value="USD">
+          USD
+        </mat-option>
+        <mat-option value="EUR">
+          EUR
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
 
-    <mat-select [(value)]="secondInputCurrency" (selectionChange)="setValue(1)">
-      <mat-option value="UAH">
-        UAH
-      </mat-option>
-      <mat-option value="USD">
-        USD
-      </mat-option>
-      <mat-option value="EUR">
-        EUR
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-</div>
+
+</body>

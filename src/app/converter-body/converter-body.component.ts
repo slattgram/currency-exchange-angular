@@ -9,15 +9,16 @@ import { CurrencyService } from ".././services/currency.service";
 export class ConverterBodyComponent implements OnInit {
   constructor(private service:CurrencyService) { }
   UahRates:any;
-  UAHEUR:any;
-  UAHUSD:any;
-
+  UAHEUR: number = 1;
+  UAHUSD: number = 1;
+  EURUSD: number = 1;
   ngOnInit(): void {
     this.service.getCurrencyRates('UAH')
       .subscribe(response => {
         this.UahRates = response;
         this.UAHUSD = this.UahRates.rates.USD;
         this.UAHEUR = this.UahRates.rates.EUR;
+        this.EURUSD = this.UAHEUR/this.UAHUSD;
       });
   }
 
@@ -29,9 +30,6 @@ export class ConverterBodyComponent implements OnInit {
   rateTopPart : number = 1;
   rateBottomPart : number = 1;
 
-  testFunction(msg:string){
-    console.log(msg)
-  }
 
   setValue(inputToChange:number){
     switch (this.firstInputCurrency) {
@@ -56,7 +54,10 @@ export class ConverterBodyComponent implements OnInit {
         this.rateBottomPart = this.UAHEUR;
         break;
     };
-    this.rate = this.rateTopPart/this.rateBottomPart;
+
+    (this.firstInputCurrency  === "UAH" || this.secondInputCurrency === "UAH") ?
+      this.rate =this.rateBottomPart/this.rateTopPart
+      :this.rate = this.rateTopPart/this.rateBottomPart;
 
     inputToChange === 2 ?
       this.secondInputValue = this.firstInputValue * this.rate

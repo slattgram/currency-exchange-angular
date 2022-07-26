@@ -12,7 +12,7 @@ export class TopBarComponent implements OnInit {
   constructor(private service:CurrencyService) {}
 
   ngOnInit() {
-    this.service.getCurrencyRates()
+    this.service.getCurrencyRates('UAH')
       .subscribe(response => {
         this.currencies = response;
       });

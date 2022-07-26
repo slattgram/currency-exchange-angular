@@ -6,12 +6,12 @@ import {HttpClient} from "@angular/common/http";
 })
 
 export class CurrencyService {
-  private host = 'https://api.exchangerate.host/latest?base=UAH'
+  private host = 'https://api.exchangerate.host/latest'
 
 
   constructor(private httpClient: HttpClient) { }
 
-  getCurrencyRates(){
-    return this.httpClient.get(this.host)
+  getCurrencyRates(currency:string){
+    return this.httpClient.get(this.host + `?base=${currency}`)
   }
 }

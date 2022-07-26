@@ -1,0 +1,47 @@
+<div>
+  <input
+    type="number"
+    [(ngModel)]="firstInputValue"
+    (ngModelChange)="setValue(2)"
+  />
+  <mat-form-field>
+    <mat-label>
+      Currency
+    </mat-label>
+
+    <mat-select [(value)]="firstInputCurrency" (selectionChange)="setValue(1)">
+      <mat-option value="UAH">
+        UAH
+      </mat-option>
+      <mat-option value="USD">
+        USD
+      </mat-option>
+      <mat-option value="EUR">
+        EUR
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <input
+    type="number"
+    [(ngModel)]="secondInputValue"
+    (ngModelChange)="setValue(1)"
+  >
+  <mat-form-field>
+    <mat-label>
+      Currency
+    </mat-label>
+
+    <mat-select [(value)]="secondInputCurrency" (selectionChange)="setValue(1)">
+      <mat-option value="UAH">
+        UAH
+      </mat-option>
+      <mat-option value="USD">
+        USD
+      </mat-option>
+      <mat-option value="EUR">
+        EUR
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
